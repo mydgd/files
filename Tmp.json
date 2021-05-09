@@ -1,0 +1,3409 @@
+{
+	"DSTemplateVersion" : "2020-03-10",
+	"ExternalResources" : {
+		"SecurityStandard_6" : {
+			"Properties" : {
+				"StandardName" : "KVKK"
+			},
+			"Type" : "SecurityStandard"
+		}
+	},
+	"Mappings" : {},
+	"Parameters" : {},
+	"Resources" : {
+		"DataDiscoveryGroup_23" : {
+			"Properties" : {
+				"Attributes" : [
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "Age",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "150",
+									"Min" : "1"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_age$)|(^age_.*$)|(^.*_age_.*$)|\\bage\\b"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123456789",
+						"Name" : "Passport number as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{9}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*passport.*$)|(^.*passport.*_.*$)|(^.*_.*passport.*_.*$)|\\b.*passport.*\\b",
+									"^[mM][aA][cC][hH][iI][nN][eE].*[rR][eE][aA][dD].*$",
+									"^[mM][rR][tT][dD].*$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr.*_.*$)|\\bpspt_nbr\\b",
+									"(?i)(^.*_ForeignTaxID.*$)|(^ForeignTaxID_.*$)|(^.*_ForeignTaxID_.*$)|\\bForeignTaxID\\b",
+									"(?i)(^.*_Foreign_TaxID.*$)|(^Foreign_TaxID_.*$)|(^.*_Foreign_TaxID_.*$)|\\bForeign_TaxID\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Race",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_race$)|(^race_.*$)|(^.*_race_.*$)|\\brace\\b",
+									"(?i)(^.*_origin$)|(^origin_.*$)|(^.*_origin_.*$)|\\borigin\\b",
+									"(?i)(^.*_color$)|(^color_.*$)|(^.*_color_.*$)|\\bcolor\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Birth Place",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_birth.*.place$)|(^birth.*.place_.*$)|(^.*_birth.*.place_.*$)|\\bbirth.*.place\\b",
+									"(?i)(^.*_location.*.birth$)|(^location.*.birth_.*$)|(^.*_location.*.birth_.*$)|\\blocation.*.birth\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Races",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "15"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*race.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Religion",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_religion$)|(^religion_.*$)|(^.*_religion_.*$)|\\breligion\\b",
+									"(?i)(^.*_faith$)|(^faith_.*$)|(^.*_faith_.*$)|\\bfaith\\b",
+									"(?i)(^.*_belief$)|(^belief_.*$)|(^.*_belief_.*$)|\\bbelief\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Religions",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "16"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*religion.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Passport (FileDatabase only)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"UnstructuredData" : "IDENTIFIER"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									""
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Sex",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[mM][aA][lL][eE]|[fF][eE][mM][aA][lL][eE]|[mM]|[fF]$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*gender.*$)|(^.*gender.*_.*$)|(^.*_.*gender.*_.*$)|\\b.*gender.*\\b",
+									"^.*[sS][eE][xX].*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "Default",
+						"MaskValue" : "",
+						"Name" : "nufus cuzdan",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"Recursive" : "False",
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "[A-Za-z0-9]{3}-[0-9]{6}"
+								},
+								"RegexValidator" : {
+									"Active" : "False"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "12345678905",
+						"Name" : "Turkish Citizen ID",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"LuaScript" : "-- Get column value                                \nlocal valStr = tostring(columnValue)               \n-- Check value length                              \nif (string.len(valStr) ~= 11) then                 \n   return 0                                        \nend                                                \n-- Check first number                              \nif (string.sub(valStr, 1, 1) == '0') then          \n   return 0                                        \nend                                                \n-- Get the sum of 10 numbers                       \nlocal sum  = 0                                     \nlocal sum1 = 0                                     \nlocal sum2 = 0                                     \nfor i = 1, #valStr do                              \n   local n = tonumber(string.sub(valStr, i, i))    \n   if (n == nil) then                              \n      return 0                                     \n   end                                             \n   if (i < 11) then                                \n       sum = sum + n                               \n   end                                             \n   if ((math.fmod(i, 2) ~= 0) and (i < 10)) then   \n      sum1 = sum1 + n                              \n   end                                             \n   if ((math.fmod(i, 2) == 0) and (i < 9)) then    \n      sum2 = sum2 + n                              \n   end                                             \nend                                                \n-- Compare with last number                        \nlocal last = tonumber(string.sub(valStr, 11, 11))  \nif (last ~= math.fmod(sum, 10)) then               \n   return 0                                        \nend                                                \n-- Second check                                    \nlocal xSum = sum1*7 - sum2                         \nlocal y = tonumber(string.sub(valStr, 10, 10))     \nif (math.fmod(xSum, 10) == y) then                 \n    return 1                                       \nelse                                               \n    return 0                                       \nend                                                \n"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Turkish License Plate",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "\\d{2}\\s?[A-Z]{1,3}\\s?\\d{2,4}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^[lL][iI][cC][eE][nN][sS][eE].*$",
+									"^[dD][rR][iI][vV][eE][rR][__][lL][iI][cC]$",
+									"^[lL][iI][cC]$",
+									"^[lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][''][__][lL][iI]$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr_.*$)|\\bpspt_nbr\\b",
+									"^[cC][dD][lL][##]$",
+									"^[cC][dD][lL][sS][##]$",
+									"^[cC][dD][lL][sS]$",
+									"^[dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][eE]$",
+									"^[dD][lL][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][__][lL][iI]$",
+									"^[dD][lL][sS]$",
+									"(?i)(^.*_driver_lic$)|(^driver_lic_.*$)|(^.*_driver_lic_.*$)|\\bdriver_lic\\b",
+									"(?i)(^.*_dls#$)|(^dls#_.*$)|(^.*_dls#_.*$)|\\bdls#\\b",
+									"^[dD][rR][iI][vV][eE][rR][''][lL][iI][cC]$",
+									"^[iI][dD][sS]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][__][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][lL][iI]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][sS]$",
+									"^[cC][dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][lL][iI][cC]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR][sS]$",
+									"^[iI][dD][##]$",
+									"^[dD][rR][iI][vV][eE][rR].*[lL][iI][cC][eE][nN][sS][eE]$",
+									"^[iI][dD][sS][##]$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "12345678905",
+						"Name" : "Turkish Citizen ID as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"LuaScript" : "-- Get column value                                \nlocal valStr = columnValue                         \n-- Check value length                              \nif (string.len(valStr) ~= 11) then                 \n   return 0                                        \nend                                                \n-- Check first number                              \nif (string.sub(valStr, 1, 1) == '0') then          \n   return 0                                        \nend                                                \n-- Get the sum of 10 numbers                       \nlocal sum  = 0                                     \nlocal sum1 = 0                                     \nlocal sum2 = 0                                     \nfor i = 1, #valStr do                              \n   local n = tonumber(string.sub(valStr, i, i))    \n   if (n == nil) then                              \n      return 0                                     \n   end                                             \n   if (i < 11) then                                \n       sum = sum + n                               \n   end                                             \n   if ((math.fmod(i, 2) ~= 0) and (i < 10)) then   \n      sum1 = sum1 + n                              \n   end                                             \n   if ((math.fmod(i, 2) == 0) and (i < 9)) then    \n      sum2 = sum2 + n                              \n   end                                             \nend                                                \n-- Compare with last number                        \nlocal last = tonumber(string.sub(valStr, 11, 11))  \nif (last ~= math.fmod(sum, 10)) then               \n   return 0                                        \nend                                                \n-- Second check                                    \nlocal xSum = sum1*7 - sum2                         \nlocal y = tonumber(string.sub(valStr, 10, 10))     \nif (math.fmod(xSum, 10) == y) then                 \n    return 1                                       \nelse                                               \n    return 0                                       \nend                                                \n"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Male First Names",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "23"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_fi.*name.*$)|(^fi.*name.*_.*$)|(^.*_fi.*name.*_.*$)|\\bfi.*name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Weight",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*weight.*$)|(^.*weight.*_.*$)|(^.*_.*weight.*_.*$)|\\b.*weight.*\\b",
+									"(?i)(^.*_.*wgt.*$)|(^.*wgt.*_.*$)|(^.*_.*wgt.*_.*$)|\\b.*wgt.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123456",
+						"Name" : "Driver License as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^[lL][iI][cC][eE][nN][sS][eE].*$",
+									"^[dD][rR][iI][vV][eE][rR][__][lL][iI][cC]$",
+									"^[lL][iI][cC]$",
+									"^[lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][''][__][lL][iI]$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr_.*$)|\\bpspt_nbr\\b",
+									"^[cC][dD][lL][##]$",
+									"^[cC][dD][lL][sS][##]$",
+									"^[cC][dD][lL][sS]$",
+									"^[dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][eE]$",
+									"^[dD][lL][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][__][lL][iI]$",
+									"^[dD][lL][sS]$",
+									"(?i)(^.*_driver_lic$)|(^driver_lic_.*$)|(^.*_driver_lic_.*$)|\\bdriver_lic\\b",
+									"(?i)(^.*_dls#$)|(^dls#_.*$)|(^.*_dls#_.*$)|\\bdls#\\b",
+									"^[dD][rR][iI][vV][eE][rR][''][lL][iI][cC]$",
+									"^[iI][dD][sS]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][__][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][lL][iI]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][sS]$",
+									"^[cC][dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][lL][iI][cC]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR][sS]$",
+									"^[iI][dD][##]$",
+									"^[dD][rR][iI][vV][eE][rR].*[lL][iI][cC][eE][nN][sS][eE]$",
+									"^[iI][dD][sS][##]$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123456",
+						"Name" : "Driver License as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^[lL][iI][cC][eE][nN][sS][eE].*$",
+									"^[dD][rR][iI][vV][eE][rR][__][lL][iI][cC]$",
+									"^[lL][iI][cC]$",
+									"^[lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][''][__][lL][iI]$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr_.*$)|\\bpspt_nbr\\b",
+									"^[cC][dD][lL][##]$",
+									"^[cC][dD][lL][sS][##]$",
+									"^[cC][dD][lL][sS]$",
+									"^[dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][eE]$",
+									"^[dD][lL][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][__][lL][iI]$",
+									"^[dD][lL][sS]$",
+									"(?i)(^.*_driver_lic$)|(^driver_lic_.*$)|(^.*_driver_lic_.*$)|\\bdriver_lic\\b",
+									"(?i)(^.*_dls#$)|(^dls#_.*$)|(^.*_dls#_.*$)|\\bdls#\\b",
+									"^[dD][rR][iI][vV][eE][rR][''][lL][iI][cC]$",
+									"^[iI][dD][sS]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][__][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][''][sS][lL][iI]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][sS]$",
+									"^[cC][dD][lL]$",
+									"^[dD][rR][iI][vV][eE][rR][lL][iI][cC][##]$",
+									"^[dD][rR][iI][vV][eE][rR][sS][lL][iI][cC]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR]$",
+									"^[iI][dD][__][nN][uU][mM][bB][eE][rR][sS]$",
+									"^[iI][dD][##]$",
+									"^[dD][rR][iI][vV][eE][rR].*[lL][iI][cC][eE][nN][sS][eE]$",
+									"^[iI][dD][sS][##]$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "First Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_first.*name.*$)|(^first.*name.*_.*$)|(^.*_first.*name.*_.*$)|\\bfirst.*name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Full Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_full.*name.*$)|(^full.*name.*_.*$)|(^.*_full.*name.*_.*$)|\\bfull.*name.*\\b",
+									"(?i)(^.*_*.card.*.name.*$)|(^*.card.*.name.*_.*$)|(^.*_*.card.*.name.*_.*$)|\\bcard.*.name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Passport Number: International Passport Number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[A-Z0-9<]{9}[0-9]{1}[A-Z]{3}[0-9]{7}[A-Z]{1}[0-9]{7}[A-Z0-9<]{14}[0-9]{2}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*passport.*$)|(^.*passport.*_.*$)|(^.*_.*passport.*_.*$)|\\b.*passport.*\\b",
+									"^[mM][aA][cC][hH][iI][nN][eE].*[rR][eE][aA][dD].*$",
+									"^[mM][rR][tT][dD].*$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr.*_.*$)|\\bpspt_nbr\\b",
+									"(?i)(^.*_ForeignTaxID.*$)|(^ForeignTaxID_.*$)|(^.*_ForeignTaxID_.*$)|\\bForeignTaxID\\b",
+									"(?i)(^.*_Foreign_TaxID.*$)|(^Foreign_TaxID_.*$)|(^.*_Foreign_TaxID_.*$)|\\bForeign_TaxID\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Height",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*height.*$)|(^.*height.*_.*$)|(^.*_.*height.*_.*$)|\\b.*height.*\\b",
+									"(?i)(^.*_.*hgt.*$)|(^.*hgt.*_.*$)|(^.*_.*hgt.*_.*$)|\\b.*hgt.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Household",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "5"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Maiden Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_maiden*.name.*$)|(^maiden*.name.*_.*$)|(^.*_maiden*.name.*_.*$)|\\bmaiden*.name.*\\b",
+									"(?i)(^.*_mai*.name.*$)|(^mai*.name.*_.*$)|(^.*_mai*.name.*_.*$)|\\bmai*.name.*\\b",
+									"(?i)(^.*_maid*.name.*$)|(^maid*.name.*_.*$)|(^.*_maid*.name.*_.*$)|\\bmaid*.name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedDate",
+						"MaskValue" : "1970-01-01",
+						"Name" : "Birth Date",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"DatetimeRange" : {
+									"Max" : "2025-01-01 00:00:00",
+									"Min" : "1925-01-01 00:00:00"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_dob$)|(^dob_.*$)|(^.*_dob_.*$)|\\bdob\\b",
+									"(?i)(^.*_date.*.of.*.birth$)|(^date.*.of.*.birth_.*$)|(^.*_date.*.of.*.birth_.*$)|\\bdate.*.of.*.birth\\b",
+									"(?i)(^.*_birth.*.date$)|(^birth.*.date_.*$)|(^.*_birth.*.date_.*$)|\\bbirth.*.date\\b"
+								]
+							},
+							"ColumnType" : "DateOnly"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Last Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_last*.name.*$)|(^last*.name.*_.*$)|(^.*_last*.name.*_.*$)|\\blast*.name.*\\b",
+									"(?i)(^.*_sur*.name.*$)|(^sur*.name.*_.*$)|(^.*_sur*.name.*_.*$)|\\bsur*.name.*\\b",
+									"(?i)(^.*_las*.name.*$)|(^las*.name.*_.*$)|(^.*_las*.name.*_.*$)|\\blas*.name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "Default",
+						"MaskValue" : "",
+						"Name" : "isim",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"Recursive" : "False",
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"\\bADI\\b|\\bSOYADI\\b|\\bADI\\b|\\bSOYAD\\b|\\bADI\\b|\\bAD\\b|\\bISIM\\b|\\bname\\b|\\bNAME\\b|\\bisim\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Female First Names",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "22"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_fi.*name.*$)|(^fi.*name.*_.*$)|(^.*_fi.*name.*_.*$)|\\bfi.*name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Middle Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_mid.*.name.*$)|(^mid.*.name.*_.*$)|(^.*_mid.*.name.*_.*$)|\\bmid.*.name.*\\b",
+									"(?i)(^.*_middle.*.name.*$)|(^middle.*.name.*_.*$)|(^.*_middle.*.name.*_.*$)|\\bmiddle.*.name.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^name$)"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Name (FileDatabase only)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"UnstructuredData" : "PERSON_NAME"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									""
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Nationality",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*nationality.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123456789",
+						"Name" : "Passport number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "999999999",
+									"Min" : "100000000"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*passport.*$)|(^.*passport.*_.*$)|(^.*_.*passport.*_.*$)|\\b.*passport.*\\b",
+									"^[mM][aA][cC][hH][iI][nN][eE].*[rR][eE][aA][dD].*$",
+									"^[mM][rR][tT][dD].*$",
+									"(?i)(^.*_pspt_nbr$)|(^pspt_nbr_.*$)|(^.*_pspt_nbr.*_.*$)|\\bpspt_nbr\\b",
+									"(?i)(^.*_ForeignTaxID.*$)|(^ForeignTaxID_.*$)|(^.*_ForeignTaxID_.*$)|\\bForeignTaxID\\b",
+									"(?i)(^.*_Foreign_TaxID.*$)|(^Foreign_TaxID_.*$)|(^.*_Foreign_TaxID_.*$)|\\bForeign_TaxID\\b"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					}
+				],
+				"Name" : "Kisisel Veriler",
+				"SecurityStandards" : [
+					{
+						"Ref" : "SecurityStandard_6"
+					}
+				]
+			},
+			"Type" : "DataDiscoveryGroup"
+		},
+		"DataDiscoveryGroup_24" : {
+			"Properties" : {
+				"Attributes" : [
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "CVC2 as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CVC2.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "CVC as number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "999",
+									"Min" : "0"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)^.*cvc.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "BIC SWIFT Code (Narrow)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([a-zA-Z]){4}(AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GG|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IM|IL|IT|JM|JP|JE|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MC|MN|ME|MS|MA|MZ|MM|MA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|RS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW)([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*[iI][sS][oO].*.[9][3][6][2].*$",
+									"^.*[sS][wW][iI][fF][tT].*[bB][iI][cC]$",
+									"^.*[bB][iI][cC].*[cC][oO][dD][eE].*$",
+									"^.*[sS][wW][iI][fF][tT]*.[iI][dD].*$",
+									"(?i)(^.*_swift$)|(^swift_.*$)|(^.*_swift_.*$)|\\bswift\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "ISIN number between Tags",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "(?<=>)[A-Z]{2}[\\d|\\w]{9}\\d{1}(?=(<))"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*ISIN.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "4276877011035748",
+						"Name" : "Luhn algorithm",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"LuaScript" : "local valStr = string.reverse(tostring(columnValue))          \n-- Luhn algorithm                                             \nlocal sum = 0                                                 \nlocal d = 0                                                   \nlocal p = 0                                                   \nfor i = 1, #valStr do                                         \n   local n = tonumber(string.sub(valStr, i, i))               \n   if (n ~= nil) then                                         \n       p = p + 1                                              \n       if (p % 2 == 1) then                                   \n           d = n                                              \n       else                                                   \n           d = n * 2                                          \n           if (d > 9) then d = d - 9 end                      \n       end                                                    \n       sum = sum + d                                          \n   end                                                        \nend                                                           \nif (sum > 0 and sum % 10 == 0) then                           \n   return 1                                                   \nelse                                                          \n   return 0                                                   \nend                                                           \n"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "CreditCardMasking",
+						"MaskValue" : "",
+						"Name" : "Luhn algorithm for text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"LuaScript" : "local valStr = string.reverse(columnValue)       \n-- Luhn algorithm                                \nlocal sum = 0                                    \nlocal d = 0                                      \nlocal p = 0                                      \nfor i = 1, #valStr do                            \n   local n = tonumber(string.sub(valStr, i, i))  \n   if (n ~= nil) then                            \n       p = p + 1                                 \n       if (p % 2 == 1) then                      \n           d = n                                 \n       else                                      \n           d = n * 2                             \n           if (d > 9) then d = d - 9 end         \n       end                                       \n       sum = sum + d                             \n   end                                           \nend                                              \nif (sum > 0 and sum % 10 == 0) then              \n   return 1                                      \nelse                                             \n   return 0                                      \nend                                              \n"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: Visa (no spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^4[0-9]{12}(?:[0-9]{3})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "1234",
+						"Name" : "PIN Number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "2147483647",
+									"Min" : "0"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*pin.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Cardholder",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*Cardholder.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: American Express (spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[+-]*3[+-]*[47][+-]*(?:\\d[+-]*){13}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "1234",
+						"Name" : "CID as number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "2147483647",
+									"Min" : "0"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CID.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "1234",
+						"Name" : "CID as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CID.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Account Number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_acc.*.num$)|(^acc.*.num_.*$)|(^.*_acc.*.num_.*$)|\\bacc.*.num\\b",
+									"(?i)(^.*_acc$)|(^acc_.*$)|(^.*_acc_.*$)|\\bacc\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: all major credit cards (no spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: all major credit cards (spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[+-]*(?:4[+-]*(?:\\d[+-]*){11}(?:(?:\\d[+-]*){3})?\\d|5[+-]*[1-5](?:[+-]*[0-9]){14}|6[+-]*(?:0[+-]*1[+-]*1|5[+-]*\\d[+-]*\\d)(?:[+-]*[0-9]){12}|3[+-]*[47](?:[+-]*[0-9]){13}|3[+-]*(?:0[+-]*[0-5]|[68][+-]*[0-9])(?:[+-]*[0-9]){11}|(?:2[+-]*1[+-]*3[+-]*1|1[+-]*8[+-]*0[+-]*0|3[+-]*5(?:[+-]*[0-9]){3})(?:[+-]*[0-9]){11})[+-]*$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: American Express (no spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^3[47][0-9]{13}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: Diners Club (no spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^3(?:0[0-5]|[68][0-9])[0-9]{11}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: Diners Club (spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[+-]*3[+-]*(?:0[+-]*[0-5]|[68][+-]*[0-9])[+-]*(?:\\d[+-]*){11}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: Visa (spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[+-]*4[+-]*(?:\\d[+-]*){12}(?:(?:\\d[+-]*){3})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: MasterCard (no spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^5[1-5][0-9]{14}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Credit card: MasterCard (spaces/dashes)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[+-]*5[+-]*[1-5][+-]*(?:[0-9][+-]*){14}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "4276877011035748",
+						"Name" : "Credit Card Number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "6800000000000000",
+									"Min" : "3000000000000000"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "CreditCardMasking",
+						"MaskValue" : "",
+						"Name" : "Credit Card Number as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11})|(63[789][0-9]{13}))$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ccn$)|(^ccn_.*$)|(^.*_ccn_.*$)|\\bccn\\b",
+									"(?i)(^.*_cred.*.card.*.num.*$)|(^cred.*.card.*.num.*_.*$)|(^.*_cred.*.card.*.num.*_.*$)|\\bcred.*.card.*.num.*\\b",
+									"(?i)(^.*_cred.*.no.*$)|(^cred.*.no.*_.*$)|(^.*_cred.*.no.*_.*$)|\\bcred.*.no.*\\b",
+									"(?i)(^.*_CR_CARD_NBR.*$)|(^CR_CARD_NBR_.*$)|(^.*_CR_CARD_NBR.*$)|\\bCR_CARD_NBR\\b",
+									"(?i)(^.*_credit_card.*$)|(^credit_card_.*$)|(^.*_credit_card_.*$)|\\bcredit_card\\b",
+									"(?i)(^.*_cc_num.*$)|(^cc_num_.*$)|(^.*_cc_num_.*$)|\\bcc_num\\b",
+									"(?i)(^.*_cc_nbr$)|(^cc_nbr_.*$)|(^.*_cc_nbr_.*$)|\\bcc_nbr\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Credit Card Number (FileDatabase only)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"UnstructuredData" : "CREDIT_CARD"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									""
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "BIC SWIFTCode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([a-zA-Z]{4})([a-zA-Z]{2})([0-9a-zA-Z]{2})([0-9a-zA-Z]{3})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*[iI][sS][oO].*.[9][3][6][2].*$",
+									"^.*[sS][wW][iI][fF][tT].*[bB][iI][cC]$",
+									"^.*[bB][iI][cC].*[cC][oO][dD][eE].*$",
+									"^.*[sS][wW][iI][fF][tT]*.[iI][dD].*$",
+									"(?i)(^.*_swift$)|(^swift_.*$)|(^.*_swift_.*$)|\\bswift\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Currency",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_currency$)|(^currency_.*$)|(^.*_currency_.*$)|\\bcurrency\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Currency Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "3"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_currency$)|(^currency_.*$)|(^.*_currency_.*$)|\\bcurrency\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "CVC2 as number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "999",
+									"Min" : "0"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CVC2.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "CVC as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)^.*cvc.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Bank Account",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^[bB][aA][nN][kK].*.[aA][cC][cC][oO][uU]$",
+									"^[bB][aA][nN][kK].*.[aA][cC][cC][tT]*.$",
+									"^[bB][aA][nN][kK].*.[aA][cC][cC][tT].*.$",
+									"^[cC][hH][eE][cC][kK][iI][nN][gG].*.[aA]$",
+									"^[dD][eE][bB][iI][tT].*.[aA][cC][cC][oO]$",
+									"^[dD][eE][bB][iI][tT].*.[aA][cC][cC][tT]$",
+									"^[sS][aA][vV][iI][nN][gG][sS].*.[aA][cC]$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "CVV2 as number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "999",
+									"Min" : "0"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CVV2.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "CVV2 as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : "^.*$"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*CVV2.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "RandomDateOffset",
+						"MaskValue" : "{\"days\":\"180\"}",
+						"Name" : "Expiration Date",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"DatetimeRange" : {
+									"Max" : "2025-01-01 00:00:00",
+									"Min" : "1925-01-01 00:00:00"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^[eE][xX][pP].*[dD][aA].*$",
+									"^[cC][rR].*[eE][xX][pP].*$",
+									"^.*[eE][xX][pP][iI][rR][aA][tT].*$"
+								]
+							},
+							"ColumnType" : "DateOnly"
+						}
+					},
+					{
+						"MaskType" : "Default",
+						"MaskValue" : "",
+						"Name" : "IBAN Turkiye",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "TR\\d{2}.\\d{4}.\\d{4}.\\d{4}.\\d{4}.\\d{4}.\\d{2}|TR\\d{24}"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*IBAN.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					}
+				],
+				"Name" : "Banka Verileri",
+				"SecurityStandards" : []
+			},
+			"Type" : "DataDiscoveryGroup"
+		},
+		"DataDiscoveryGroup_25" : {
+			"Properties" : {
+				"Attributes" : [
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "12345",
+						"Name" : "Beneficiary Account Number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*Beneficiary Account Number.*$",
+									"^.BAN$",
+									"Beneficiary"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "12345",
+						"Name" : "Beneficiary Account Number as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*Beneficiary Account Number.*$",
+									"^.BAN$",
+									"Beneficiary"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "Tax as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*tax.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "RandomFromInterval",
+						"MaskValue" : "{\"maxVal\":\"999999999\", \"minVal\":\"100000000\"}",
+						"Name" : "TAX ID as number",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"NumberRange" : {
+									"Max" : "999999999",
+									"Min" : "100000000"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*tax.?id.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123456789",
+						"Name" : "TAX ID as text",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([0-9]{2}-[0-9]{7}|[0-9]{9})(\\ )*$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*tax.?id.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "Billing as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*billing.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "Billing as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*billing.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "Income as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*income.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "Income as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*income.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Individual Taxpayer Identification Number (USA)",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_ITIN.*$)|(^ITIN.*_.*$)|(^.*_ITIN.*_.*$)|\\bITIN.*\\b",
+									"^.*[iI][nN][dD][iI][vV][iI][dD][uU].*.[tT][aA][xX].*.[nN][uU].*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "Salary as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^[cC][oO][mM][pP][eE][nN][sS][aA][tT][iI][oO][nN]$",
+									"^[sS][aA][lL][aA][rR][yY].*$",
+									"^[wW][aA][gG][eE][sS].*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123",
+						"Name" : "Salary as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^[cC][oO][mM][pP][eE][nN][sS][aA][tT][iI][oO][nN]$",
+									"^[sS][aA][lL][aA][rR][yY].*$",
+									"^[wW][aA][gG][eE][sS].*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123",
+						"Name" : "Tax as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*tax.*$"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					}
+				],
+				"Name" : "Finansal Veriler",
+				"SecurityStandards" : []
+			},
+			"Type" : "DataDiscoveryGroup"
+		},
+		"DataDiscoveryGroup_26" : {
+			"Properties" : {
+				"Attributes" : [
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geocoding Longtitude",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^-?([1]?[1-7][1-9]|[1]?[1-8][0]|[1-9]?[0-9])\\.{1}[0-9]{1,6}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "ISO Full Country Name",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "10"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_iso.*.country.*.code$)|(^iso.*.country.*.code_.*$)|(^.*_iso.*.country.*.code_.*$)|\\biso.*.country.*.code\\b",
+									"(?i)(^.*_iso.*.country$)|(^iso.*.country_.*$)|(^.*_iso.*.country_.*$)|\\biso.*.country\\b",
+									"(?i)(^.*_country$)|(^country_.*$)|(^.*_country_.*$)|\\bcountry\\b",
+									"(?i)(^.*_nation$)|(^nation_.*$)|(^.*_nation_.*$)|\\bnation\\b",
+									"(?i)(^.*_principality$)|(^principality_.*$)|(^.*_principality_.*$)|\\bprincipality\\b",
+									"(?i)(^.*_territory$)|(^territory_.*$)|(^.*_territory_.*$)|\\bterritory\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Township",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*township.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Cities Regions",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "20"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Districts Towns Suburbs",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "21"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Street",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*street.*$)|(^.*street.*_.*$)|(^.*_.*street.*_.*$)|\\b.*street.*\\b",
+									"(?i)(^.*_.*road.*$)|(^.*road.*_.*$)|(^.*_.*road.*_.*$)|\\b.*road.*\\b",
+									"(?i)(^.*_lane$)|(^lane_.*$)|(^.*_lane_.*$)|\\blane\\b",
+									"^.*[cC][oO][uU][rR][tT].*$",
+									"(?i)(^.*_.*avenue.*$)|(^.*avenue.*_.*$)|(^.*_.*avenue.*_.*$)|\\b.*avenue.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Postal Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "24"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "USA Postcodes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "36"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "12345-67890",
+						"Name" : "Zip Code",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Bundle Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{6}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Bundle Postcode1",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Bundle Postcode2",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{5}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "ISO Alpha-2 Country Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "8"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_iso.*.country.*.code$)|(^iso.*.country.*.code_.*$)|(^.*_iso.*.country.*.code_.*$)|\\biso.*.country.*.code\\b",
+									"(?i)(^.*_iso.*.country$)|(^iso.*.country_.*$)|(^.*_iso.*.country_.*$)|\\biso.*.country\\b",
+									"(?i)(^.*_country$)|(^country_.*$)|(^.*_country_.*$)|\\bcountry\\b",
+									"(?i)(^.*_nation$)|(^nation_.*$)|(^.*_nation_.*$)|\\bnation\\b",
+									"(?i)(^.*_principality$)|(^principality_.*$)|(^.*_principality_.*$)|\\bprincipality\\b",
+									"(?i)(^.*_territory$)|(^territory_.*$)|(^.*_territory_.*$)|\\bterritory\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: American Samoa 1",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "\\d{5}-\\d{6}|\\d{5}-\\d{4}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Anguilla Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^AI-2640$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Argentina Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([A-HJ-TP-Z]{1}\\d{4}[A-Z]{3}|[a-z]{1}\\d{4}[a-hj-tp-z]{3})$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Ascension Island Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^ASCN[+]1ZZ$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Australia Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^((02[0-9]{2})|(0[8-9][0-9]{2})|(1[0-9]{3})|(2[0-7][0-9]{2})|(28[0-8][0-9])|(289[0-8])|(29[0-9]{2})|([3-5][0-9]{3})|(6[0-6][0-9]{2})|(67[0-8][0-9])|(679[0-7])|(6[8-9][0-9]{2})|([7-9][0-9]{3}))$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Barbados Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[A-Z]{2}[0-9]{5}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Belgium Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[1-9]{1}[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Bermuda Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[A-Z]{2}[+][0-9]{2}|[A-Z]{2}[+][A-Z]{2}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Brazil Post Code",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{5}(-?[0-9]{3})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: British Antartic Territory Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^BIQQ[+]1ZZ$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "ISO Alpha-3 Country Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "9"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_iso.*.country.*.code$)|(^iso.*.country.*.code_.*$)|(^.*_iso.*.country.*.code_.*$)|\\biso.*.country.*.code\\b",
+									"(?i)(^.*_iso.*.country$)|(^iso.*.country_.*$)|(^.*_iso.*.country_.*$)|\\biso.*.country\\b",
+									"(?i)(^.*_country$)|(^country_.*$)|(^.*_country_.*$)|\\bcountry\\b",
+									"(?i)(^.*_nation$)|(^nation_.*$)|(^.*_nation_.*$)|\\bnation\\b",
+									"(?i)(^.*_principality$)|(^principality_.*$)|(^.*_principality_.*$)|\\bprincipality\\b",
+									"(?i)(^.*_territory$)|(^territory_.*$)|(^.*_territory_.*$)|\\bterritory\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: British Virgin Islands Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[A-z]{2}[0-9]{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Brunei Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[A-z]{2}[0-9]{2}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Cayman Islands Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\w{2}\\d{1}[-]\\d{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Chile Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{3}[-]\\d{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Denmark Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([D-d][K-k])?(+|-)?[1-9]{1}[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Dutch Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[1-9][0-9]{3}\\s?[a-zA-Z]{2}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Estonia Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: France Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: German PostCode (accurate)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "((0[13-7]|1[1235789]|[257][0-9]|3[0-35-9]|4[0124-9]|6[013-79]|8[0124-9]|9[0-5789])[0-9]{3}|10([2-9][0-9]{2}|1([2-9][0-9]|11[5-9]))|14([01][0-9]{2}|715))+"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: German PostCode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "\\b((?:0[1-46-9]\\d{3})|(?:[1-357-9]\\d{4})|(?:[4][0-24-9]\\d{3})|(?:[6][013-9]\\d{3}))\\b"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "State",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*add.*state.*$)|(^.*add.*state.*_.*$)|(^.*_.*add.*state.*_.*$)|\\b.*add.*state.*\\b",
+									"(?i)(^.*_.*us.*state.*$)|(^.*us.*state.*_.*$)|(^.*_.*us.*state.*_.*$)|\\b.*us.*state.*\\b",
+									"(?i)(^.*_state$)|(^state_.*$)|(^.*_state_.*$)|\\bstate\\b",
+									"(?i)(^.*_.*province.*$)|(^.*province.*_.*$)|(^.*_.*province.*_.*$)|\\b.*province.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: India Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(?!0{1})\\d{6}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Italy Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{5}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Moldova Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\w{2}[-]\\d{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Netherlands Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[1-9][0-9]{3}\\s?([a-zA-Z]{2})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Postcode Papua NewGuinea Oman Bhutan",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Poland Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{2}[-]\\d{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: South Georgia South Sandwich Islands Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^SIQQ[+]1ZZ$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Spain Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[01-52]{2}[0-9]{3}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Sweden Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(s-|S-){0,1}[0-9]{3}\\s?[0-9]{2}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Swiss Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[1-9][0-9][0-9][0-9]$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "USA States",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "37"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_.*add.*state.*$)|(^.*add.*state.*_.*$)|(^.*_.*add.*state.*_.*$)|\\b.*add.*state.*\\b",
+									"(?i)(^.*_.*us.*state.*$)|(^.*us.*state.*_.*$)|(^.*_.*us.*state.*_.*$)|\\b.*us.*state.*\\b",
+									"(?i)(^.*_state$)|(^state_.*$)|(^.*_state_.*$)|\\bstate\\b",
+									"(?i)(^.*_.*province.*$)|(^.*province.*_.*$)|(^.*_.*province.*_.*$)|\\b.*province.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: UK Postal Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^([A-Za-z]{1,2}[0-9][A-Za-z0-9]?+?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}|[Gg][Ii][Rr].?0[Aa][Aa])$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: US Postal Codes",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{5}(-\\d{4})?$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Uzbekistan Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{3}[-]\\d{3}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Vatican Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^00120$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Venezuela Postcode",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{4}[+]\\w{1}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Token Set3",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^[0-9]{4}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Token Set4",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^\\d{3}[+]\\d{2}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Post Code: Token Set5",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^TKCA{1}[+]1ZZ{1}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geocoding Latitude",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Latitude ISO6709",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,8}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "County",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_county$)|(^county_.*$)|(^.*_county_.*$)|\\bcounty\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Longtitude ISO6709",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "-?([1]?[0-7][1-9]|[1]?[0-8][0]|[1-9]?[0-9])\\.{1}[0-9]{1,8}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Turkish Address Words",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "19"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									".*"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Cities of World",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "1"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*city.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Precinct",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*precinct.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedNumber",
+						"MaskValue" : "123456",
+						"Name" : "Post Code as number",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "Number"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "123456",
+						"Name" : "Post Code as text",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_zip.*$)|(^zip.*_.*$)|(^.*_zip.*_.*$)|\\bzip.*\\b",
+									"^[pP][iI][nN].*$",
+									"(?i)(^.*_.*postal.*.code.*$)|(^.*postal.*.code.*_.*$)|(^.*_.*postal.*.code.*_.*$)|\\b.*postal.*.code.*\\b",
+									"(?i)(^.*_.*post.*.code.*$)|(^.*post.*.code.*_.*$)|(^.*_.*post.*.code.*_.*$)|\\b.*post.*.code.*\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Cities of the World",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "1"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*city.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geocoding Lat Long",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6}\\;-?([1]?[1-7][1-9]|[1]?[1-8][0]|[1-9]?[0-9])\\.{1}[0-9]{1,6}$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geocoding Polygon Shape",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "^(?:-?(?:[1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6}\\;-?(?:[1]?[1-7][1-9]|[1]?[1-8][0]|[1-9]?[0-9])\\.{1}[0-9]{1,6}\\|?)+$"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Lat Long ISO6709",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,8}(?:,+|;+|[,;+])-?([1]?[0-7][1-9]|[1]?[0-8][0]|[1-9]?[0-9])\\.{1}[0-9]{1,8}"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "USA Counties",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Lexicon" : "28"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*county.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Lat Long ISO6709 AnnexD",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "([0-8]?[1-9]|[0-9]?0)[\u00b0]([0-5]?[1-9]|[0-6]?0)[']([0-5]?[1-9]|[0-6]?0)[.][0-9]{1,6}[\"][\\t+]?[NS][\\t+]?(1?[1-7][1-9]|1?[1-8]0|[0-9]?[0-9])[\u00b0][1-6]?[0-9]['][1-6][0-9]\\.[0-9]{1,6}\"[\\t+]?[EW]"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Latitude ISO6709 AnnexD",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "([0-8]?[1-9]|[0-9]?0)[\u00b0]([0-5]?[1-9]|[0-6]?0)[']([0-5]?[1-9]|[0-6]?0)[.][0-9]{1,6}[\"][\\t+]?[NS]"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "",
+						"Name" : "Geo Longtitude ISO6709 AnnexD",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"RegexCaseSensitive" : "False",
+									"RegexStr" : "(1?[1-7][1-9]|1?[1-8]0|[0-9]?[0-9])[\u00b0][1-6]?[0-9]['][1-6][0-9]\\.[0-9]{1,6}\"[\\t+]?[EW]"
+								}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*geo.*coord.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Address",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*(?<!ip|ipv4|ipv6|mac|net|email)_addr(ess)?(es)?(\\d)?$)|(^addr(ess)?(es)?(\\d)?_(?!ip|mac|net|email).*$)|(^.*(?<!ip|ipv4|ipv6|mac|net|email)_addr(ess)?(es)?(\\d)?_(?!ip|ipv4|ipv6|mac|net|email|v4|v6).*$)|(?<!ip|ipv4|ipv6|mac|net|email)\\baddr(ess)?(es)?(\\d)?\\b(?!ip|mac|net|email)"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Location (FileDatabase only)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"UnstructuredData" : "LOCATION"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									""
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "12345-67890",
+						"Name" : "Zip Code (FileDatabase only)",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"UnstructuredData" : "ZIP_CODE"
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "True",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									""
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Country",
+						"SearchCondition" : {
+							"ColumnData" : {
+								"Regex" : {
+									"Recursive" : "False",
+									"RegexCaseSensitive" : "True",
+									"RegexStr" : ".*"
+								},
+								"RegexValidator" : {}
+							},
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameFullName" : "False",
+								"ColumnNameRegexArr" : [
+									"(?i)(^.*_iso.*.country.*.code$)|(^iso.*.country.*.code_.*$)|(^.*_iso.*.country.*.code_.*$)|\\biso.*.country.*.code\\b",
+									"(?i)(^.*_iso.*.country$)|(^iso.*.country_.*$)|(^.*_iso.*.country_.*$)|\\biso.*.country\\b",
+									"(?i)(^.*_country$)|(^country_.*$)|(^.*_country_.*$)|\\bcountry\\b",
+									"(?i)(^.*_nation$)|(^nation_.*$)|(^.*_nation_.*$)|\\bnation\\b",
+									"(?i)(^.*_principality$)|(^principality_.*$)|(^.*_principality_.*$)|\\bprincipality\\b",
+									"(?i)(^.*_territory$)|(^territory_.*$)|(^.*_territory_.*$)|\\bterritory\\b"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "Parish",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*parish.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					},
+					{
+						"MaskType" : "FixedString",
+						"MaskValue" : "***",
+						"Name" : "City",
+						"SearchCondition" : {
+							"ColumnName" : {
+								"ColumnNameCaseSensitive" : "False",
+								"ColumnNameRegexArr" : [
+									"^.*city.*$"
+								]
+							},
+							"ColumnType" : "String"
+						}
+					}
+				],
+				"Name" : "Adres Cografi Veriler",
+				"SecurityStandards" : []
+			},
+			"Type" : "DataDiscoveryGroup"
+		}
+	}
+}
